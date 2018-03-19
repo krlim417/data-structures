@@ -12,6 +12,14 @@ const Queue = function() {
   };
 
   someInstance.dequeue = function() {
+    const dequeueValue = storage[1];
+    for (let key in storage) {
+      storage[key] = storage[++key];
+    }
+    if (storageSize > 0) {
+      storageSize--;
+    }
+    return dequeueValue;
   };
 
   someInstance.size = function() {
