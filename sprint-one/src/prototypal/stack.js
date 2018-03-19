@@ -8,5 +8,10 @@ var Stack = function() {
 };
 
 var stackMethods = {};
-
+stackMethods.push = function(value) {
+  this._storage[++this._storageSize] = value;
+};
+stackMethods.size = function() {
+  return this._storageSize;
+};
 
