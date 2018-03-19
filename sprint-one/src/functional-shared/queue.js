@@ -10,7 +10,7 @@ var Queue = function() {
 
 var queueMethods = {};
 queueMethods.enqueue = function(value) {
-  return this._storage[++this._storageSize] = value;
+  this._storage[++this._storageSize] = value;
 };
 queueMethods.dequeue = function() {
   const dequeueValue = this._storage[1];
