@@ -12,6 +12,14 @@ const stackMethods = {};
 stackMethods.push = function(value) {
   this._storage[++this._storageSize] = value;
 };
+stackMethods.pop = function() {
+  const popValue = this._storage[this._storageSize];
+  delete this._storage[this._storageSize];
+  if (this._storageSize > 0) {
+    this._storageSize--;
+  }
+  return popValue;
+};
 stackMethods.size = function() {
   return this._storageSize;
 };
