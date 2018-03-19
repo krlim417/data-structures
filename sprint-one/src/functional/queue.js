@@ -1,5 +1,5 @@
 const Queue = function() {
-  let someInstance = {};
+  const someInstance = {};
 
   // Use an object with numeric keys to store values
   let storage = {};
