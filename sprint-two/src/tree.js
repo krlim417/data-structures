@@ -11,6 +11,8 @@ const Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  const newChild = new Tree(value);
+  this.children.push(newChild);
 };
 
 treeMethods.contains = function(target) {
