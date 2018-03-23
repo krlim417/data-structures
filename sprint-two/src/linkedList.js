@@ -23,6 +23,14 @@ const LinkedList = function() {
   };
 
   list.contains = function(target) {
+    let currentNode = list.head;
+    while(currentNode) {
+      if (currentNode.value === target) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    return false;
   };
 
   return list;
