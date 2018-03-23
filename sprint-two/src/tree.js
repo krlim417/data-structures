@@ -1,10 +1,10 @@
-var Tree = function(value) {
-  var newTree = {};
+const Tree = function(value) {
+  const newTree = {};
   newTree.value = value;
 
   // your code here
-  newTree.children = null;  // fix me
-
+  newTree.children = [];
+  _(newTree).extend(treeMethods);
   return newTree;
 };
 
