@@ -47,4 +47,7 @@ const Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * addToTail (insertion): O(1), constant
+ * removeHead (deletion): O(1), constant
+ * contains (search): O(n), linear
  */
