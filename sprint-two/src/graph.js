@@ -17,6 +17,12 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(nodeToRemove) {
+  if (this.contains(nodeToRemove)) {
+    for (let node in this._storage) {
+      this.removeEdge(node, nodeToRemove);
+    }
+    delete this._storage[nodeToRemove];
+  }
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
