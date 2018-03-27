@@ -18,6 +18,15 @@ HashTable.prototype.insert = function(k, v) {
 };
 
 HashTable.prototype.retrieve = function(k) {
+  const index = getIndexBelowMaxForKey(k, this._limit);
+  const bucket = this._storage.get(index);
+  for (let i = 0; i < bucket.length; i++) {
+    const tuple = bucket[i];
+    if (tuple[0] === k) {
+      return tuple[1];
+    }
+  }
+  return;
 };
 
 HashTable.prototype.remove = function(k) {
