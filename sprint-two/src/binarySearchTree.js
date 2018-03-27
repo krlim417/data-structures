@@ -9,6 +9,19 @@ var BinarySearchTree = function(value) {
 const binaryTreePrototype = {};
 
 binaryTreePrototype.insert = function(value) {
+  if (value < this.value) {
+    if (this.left === null) {
+      this.left = BinarySearchTree(value);
+    } else {
+      this.left.insert(value);
+    }
+  } else if (value > this.value) {
+    if (this.right === null) {
+      this.right = BinarySearchTree(value);
+    } else {
+      this.right.insert(value);
+    }
+  }
 };
 
 binaryTreePrototype.contains = function(value) {
