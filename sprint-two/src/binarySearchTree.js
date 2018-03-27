@@ -25,6 +25,14 @@ binaryTreePrototype.insert = function(value) {
 };
 
 binaryTreePrototype.contains = function(value) {
+  if (this.value === value) {
+    return true;
+  } else if (value < this.value && this.left) {
+    return this.left.contains(value);
+  } else if (value > this.value && this.right) {
+    return this.right.contains(value);
+  }
+  return false;
 };
 
 binaryTreePrototype.depthFirstLog = function(callback) {
